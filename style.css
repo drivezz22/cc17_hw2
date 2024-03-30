@@ -1,25 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600&display=swap');
 
+/* Global Styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+:root {
+  --primary-color: #3b3d53;
+  --secondary-color: #00e2b1;
+  --header-bg-color: #ffffff;
+  --border-color: rgb(238, 238, 238);
+  --secondary-hover-color: rgba(0, 218, 182, 0.089);
+  --break-line-color: #e8eaf0;
+  --nav-icon-color: #afb1b9;
+  --nav-icon-hover-color: #2e343a;
+  --main-cart-bg-color: #f6f6f6;
+  --main-cart-text-color: #030303;
+  --course-item-box-shadow-color: rgba(192, 192, 192, 0.208);
+  --docs-bg-color: #8ac4fa;
+  --docs-bg-box-shadow-color: #72a2dc;
+  --slide-bg-color: #fde157;
+  --slide-bg-box-shadow-color: #f5f378a5;
+  --detail-text-color: #444853;
+  --select-border-color: #ffffff00;
+  --dot-color: #e7f1fd;
+  --price-color: #697284;
+  --item-bg-color: #ffffff;
+  --cart-item-text-bg-color: red;
+  --cart-item-text-color: #ffffff;
+  --subtotal-h3-color: #aaaab5;
+  --subtotal-p-color: #6b6d7e;
+  --input-bd-color: #b9b9b96e;
+  --input-hover-color: #585757;
+  --button-bt1-color: #ffffff;
+  --button-bt1-hover-color: rgba(0, 218, 182, 0.3);
+  --total-payment-h3-color: #3c3c3d;
+  --checkout-bt-text-color: #075c5f;
+}
+
 body {
   font-family: 'Kanit', sans-serif;
 }
 
-/* Header */
-
+/* Header Styles */
 header {
   width: 100vw;
   height: 72px;
   padding: 8px 0;
-  border-bottom: 2px solid rgb(238, 238, 238);
+  border-bottom: 2px solid var(--border-color);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  background-color: var(--header-bg-color);
+  z-index: 100;
 }
 
 nav {
@@ -57,7 +95,7 @@ nav {
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  color: #3b3d53;
+  color: var(--primary-color);
 }
 
 .nav-right {
@@ -71,23 +109,22 @@ nav {
   text-align: center;
   width: 60px;
   font-weight: bold;
-  color: #3b3d53;
+  color: var(--primary-color);
 }
 
 .nav-center .menu-item:hover {
-  background-color: rgba(0, 218, 182, 0.089);
+  background-color: var(--secondary-hover-color);
 }
 
 .nav-right .break-line {
-  background: #e8eaf0;
+  background-color: var(--break-line-color);
   width: 1px;
   height: 32px;
   margin: 0 16px;
-  color: #3b3d53;
 }
 
 nav i {
-  color: #afb1b9;
+  color: var(--nav-icon-color);
   font-size: 1.2rem;
   padding: 0 10px;
   margin-right: 10px;
@@ -95,7 +132,11 @@ nav i {
 }
 
 nav i:hover {
-  color: #2e343a;
+  color: var(--nav-icon-hover-color);
+}
+
+.main-cart {
+  margin-top: 64px;
 }
 
 .cart-item {
@@ -106,8 +147,8 @@ nav i:hover {
   position: absolute;
   top: -7px;
   right: 13px;
-  background-color: rgb(255, 0, 0);
-  color: white;
+  background-color: var(--cart-item-text-bg-color);
+  color: var(--cart-item-text-color);
   font-size: 0.5rem;
   width: 16px;
   height: 16px;
@@ -121,12 +162,11 @@ nav i:hover {
   cursor: pointer;
 }
 
-/* my cart */
-
+/* Main Cart Styles */
 .main-cart {
   height: 100vh;
   width: 100vw;
-  background-color: #f6f6f6;
+  background-color: var(--main-cart-bg-color);
 }
 
 .main-cart > p {
@@ -134,7 +174,7 @@ nav i:hover {
   padding: 30px 0 0 60px;
   font-size: 42px;
   font-weight: 600;
-  color: #030303;
+  color: var(--main-cart-text-color);
 }
 
 .cart {
@@ -152,12 +192,18 @@ nav i:hover {
 .course-item {
   display: flex;
   align-items: center;
-  background-color: #ffffff;
+  background-color: var(--item-bg-color);
   margin-top: 30px;
   border-radius: 8px;
   width: 520px;
   height: 200px;
-  box-shadow: 2px 2px 4px rgba(192, 192, 192, 0.208);
+  box-shadow: 2px 2px 4px var(--course-item-box-shadow-color);
+}
+
+.course-item:hover,
+.order-info:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  opacity: 0.9;
 }
 
 .course-item .trash-icon {
@@ -173,25 +219,25 @@ nav i:hover {
 
 .course-item .trash-icon i {
   font-size: 16px;
-  color: #90d5c3;
+  color: var(--secondary-color);
   cursor: pointer;
 }
 
 .course-item .trash-icon:hover {
-  border-color: #90d5c38c;
+  border-color: var(--secondary-hover-color);
 }
 
 .course-item .image-box {
   width: 140px;
   height: 140px;
-  background-color: #8ac4fa;
+  background-color: var(--docs-bg-color);
   border-radius: 12px;
-  box-shadow: 2px 2px 4px #72a2dc;
+  box-shadow: 2px 2px 4px var(--docs-bg-box-shadow-color);
 }
 
 .course-item .image-box[class*='slide'] {
-  background-color: #fde157;
-  box-shadow: 2px 2px 4px #f5f378a5;
+  background-color: var(--slide-bg-color);
+  box-shadow: 2px 2px 4px var(--slide-bg-box-shadow-color);
 }
 
 .course-item .image-box:hover {
@@ -213,7 +259,7 @@ nav i:hover {
 .details p {
   font-size: 24px;
   padding-top: 15px;
-  color: #444853;
+  color: var(--detail-text-color);
 }
 
 .details .level {
@@ -226,11 +272,11 @@ nav i:hover {
   font-family: 'Kanit', sans-serif, 'FontAwesome';
   width: 64px;
   border-radius: 4px;
-  border: 1px solid #ffffff00;
+  border: 1px solid var(--select-border-color);
 }
 
 .details .level select:hover {
-  border: 1px solid #00e2b1;
+  border: 1px solid var(--secondary-color);
 }
 
 .level span::before {
@@ -239,18 +285,19 @@ nav i:hover {
 }
 
 .details .level .dot {
-  color: #e7f1fd;
+  color: var(--dot-color);
 }
 
 i[class*='select'] {
-  color: #00e2b1;
+  color: var(--secondary-color);
 }
 
 .details .price {
-  color: #697284;
+  color: var(--price-color);
   font-size: 24px;
 }
 
+/* Order Info Styles */
 .order-info {
   width: 420px;
   height: 340px;
@@ -261,15 +308,15 @@ i[class*='select'] {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  border: 2px solid #82828229;
-  background-color: white;
+  background-color: var(--item-bg-color);
+  box-shadow: 2px 2px 4px var(--course-item-box-shadow-color);
 }
 
 .order-info p {
   text-transform: capitalize;
   font-size: 22px;
   font-weight: bold;
-  color: #384048;
+  color: var(--detail-text-color);
 }
 
 .order-info .sub-total {
@@ -281,13 +328,13 @@ i[class*='select'] {
   font-size: 18px;
   font-weight: normal;
   margin-top: -10px;
-  color: #aaaab5;
+  color: var(--subtotal-h3-color);
 }
 
 .order-info .sub-total p {
   font-size: 18px;
   font-weight: normal;
-  color: #6b6d7e;
+  color: var(--subtotal-p-color);
 }
 
 .order-info .promotio-code {
@@ -310,28 +357,28 @@ i[class*='select'] {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #90d5c3;
+  color: var(--secondary-color);
 }
 
 .order-info .promotio-code input {
   width: 240px;
   font-family: 'Kanit', sans-serif;
-  border: 1px solid #b9b9b96e;
+  border: 1px solid var(--input-bd-color);
   text-indent: 12px;
   border-radius: 4px;
 }
 
 .order-info .promotio-code input::placeholder {
   font-family: 'Kanit', sans-serif;
-  color: #585757;
+  color: var(--input-hover-color);
   opacity: 50%;
 }
 
 .order-info .promotio-code button {
   width: 100px;
-  color: #90d5c3;
-  border: 2px solid #90d5c3;
-  background-color: white;
+  color: var(--secondary-color);
+  border: 2px solid var(--secondary-color);
+  background-color: var(--button-bt1-color);
   border-radius: 10px;
   font-size: 12px;
   font-weight: bold;
@@ -341,15 +388,15 @@ i[class*='select'] {
 }
 
 .order-info .promotio-code button:hover {
-  color: #90d5c38c;
-  border: 2px solid #90d5c38c;
+  color: var(--button-bt1-hover-color);
+  border: 2px solid var(--button-bt1-hover-color);
 }
 
 .order-info .break-line {
   background: #e8eaf0;
   width: 100%;
   height: 1px;
-  color: #3b3d53;
+  color: var(--primary-color);
   opacity: 50%;
 }
 
@@ -362,13 +409,13 @@ i[class*='select'] {
 .order-info .total-payment h3 {
   font-size: 18px;
   font-weight: normal;
-  color: #3c3c3d;
+  color: var(--total-payment-h3-color);
 }
 
 .order-info .total-payment p {
   font-size: 24px;
   font-weight: 500;
-  color: #68bcae;
+  color: var(--secondary-color);
 }
 
 .order-info .checkout {
@@ -377,8 +424,8 @@ i[class*='select'] {
   font-family: 'Kanit', sans-serif;
   border: none;
   border-radius: 10px;
-  background-color: #00dab6;
-  color: #075c5f;
+  background-color: var(--secondary-color);
+  color: var(--checkout-bt-text-color);
   text-transform: uppercase;
   font-size: 12px;
   font-weight: bold;
@@ -391,5 +438,5 @@ i[class*='select'] {
 }
 
 .order-info .checkout:hover {
-  background-color: #00dab685;
+  background-color: var(--button-bt1-hover-color);
 }
