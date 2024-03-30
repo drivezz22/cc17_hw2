@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Passcard</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://kit.fontawesome.com/e01dc8a1ad.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="nav-left">
+          <a class="logo" href="#">
+            <img
+              src="	https://www.jobpasscard.com/static/images/new_Jobpasscard/jobpasscard-logo-nav.png"
+              alt=""
+              class="logo"
+            />
+          </a>
+        </div>
+
+        <div class="nav-center">
+          <div class="menu-item">About us</div>
+          <div class="menu-item">Passcard</div>
+          <div class="menu-item">Profile</div>
+        </div>
+        <div class="nav-right">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <div class="cart-item">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>1</p>
+          </div>
+
+          <div class="menu-item">Login</div>
+          <div class="break-line"></div>
+          <div class="menu-item">Sign up</div>
+        </div>
+      </nav>
+    </header>
+
+    <div class="main-cart">
+      <p>My cart</p>
+
+      <div class="cart">
+        <div class="courses">
+          <div class="course-item">
+            <div class="trash-icon">
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+            <div class="image-box docs"><img src="./img/docs.png" alt="google_docs" /></div>
+            <div class="details">
+              <p>Google Docs</p>
+              <div class="level">
+                <div class="dot">
+                  <i class="fa-solid fa-circle select"></i>
+                  <i class="fa-solid fa-circle"></i>
+                  <i class="fa-solid fa-circle"></i>
+                </div>
+                <select name="docs-level" class="docs level">
+                  <option value="1-3">LV 1-3</option>
+                  <option value="2-3">LV 2-3 <span>&nbsp;&nbsp;&#xf00c;&nbsp;&nbsp;</span></option>
+                  <option value="3-3">LV 3-3</option>
+                </select>
+              </div>
+              <div class="price">THB <span>150</span></div>
+            </div>
+          </div>
+          <div class="course-item">
+            <div class="trash-icon">
+              <i class="fa-regular fa-trash-can"></i>
+            </div>
+            <div class="image-box slide"><img src="./img/slide.png" alt="google_slide" /></div>
+            <div class="details">
+              <p>Google Slides</p>
+              <div class="level">
+                <div class="dot">
+                  <i class="fa-solid fa-circle select"></i>
+                  <i class="fa-solid fa-circle select"></i>
+                  <i class="fa-solid fa-circle select"></i>
+                  <i class="fa-solid fa-circle"></i>
+                </div>
+                <select name="docs-level" class="docs level">
+                  <option value="1-4">LV 1/4</option>
+                  <option value="2-4">LV 2/4</option>
+                  <option value="3-4">LV 3/4</option>
+                  <option value="4-4">LV 4/4</option>
+                </select>
+              </div>
+              <div class="price">THB <span>150</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="order-info">
+          <p>Order info</p>
+          <div class="sub-total">
+            <h3>Subtotal</h3>
+            <p>THB <span>300</span></p>
+          </div>
+          <div class="promotio-code">
+            <i class="fa-solid fa-ticket"></i>
+            <input type="text" placeholder="Promotion code" />
+            <button type="submit">Apply</button>
+          </div>
+          <div class="break-line"></div>
+          <div class="total-payment">
+            <h3>Total payment</h3>
+            <p>THB <span>300</span></p>
+          </div>
+          <button type="submit" class="checkout">Log in to checkout</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
